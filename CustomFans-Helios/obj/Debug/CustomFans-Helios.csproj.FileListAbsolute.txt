@@ -1,0 +1,13 @@
+C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\bin\Debug\CustomFans-Helios.exe.config
+C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\bin\Debug\CustomFans-Helios.exe
+C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\bin\Debug\CustomFans-Helios.pdb
+C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\bin\Debug\OpenHardwareMonitorLib.dll
+C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\bin\Debug\TsDotNetLib.dll
+C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\Debug\CustomFans-Helios.csproj.AssemblyReference.cache
+C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\Debug\CustomFans_Helios.Form1.resources
+C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\Debug\CustomFans_Helios.Properties.Resources.resources
+C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\Debug\CustomFans-Helios.csproj.GenerateResource.cache
+C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\Debug\CustomFans-Helios.csproj.CoreCompileInputs.cache
+C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\Debug\CustomFans-Helios.csproj.CopyComplete
+C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\Debug\CustomFans-Helios.exe
+C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\Debug\CustomFans-Helios.pdb
