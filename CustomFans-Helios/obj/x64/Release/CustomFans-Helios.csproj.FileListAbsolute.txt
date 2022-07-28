@@ -10,3 +10,4 @@ C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Release\
 C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Release\CustomFans-Helios.csproj.CopyComplete
 C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Release\CustomFans-Helios.exe
 C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Release\CustomFans-Helios.pdb
+C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Release\CustomFans-Helios.csproj.AssemblyReference.cache
