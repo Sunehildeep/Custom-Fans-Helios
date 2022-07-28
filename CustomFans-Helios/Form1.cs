@@ -193,11 +193,10 @@ namespace CustomFans_Helios
 		}
 
 
-		public static bool IsBetween(int lower, int upper, int num, bool inclusive = false)
+		public static bool IsBetween(int MIN, int MAX, int x)
 		{
-			return inclusive
-				? lower <= num && num <= upper
-				: lower < num && num < upper;
+			if (x >= MIN && x <= MAX) return true;
+			else return false;
 		}
 
 		private async void curveCheck(Object source, ElapsedEventArgs e)
@@ -207,7 +206,7 @@ namespace CustomFans_Helios
 				int cpu = 0;
 				int gpu = 0;
 				
-				getCpuTemp(ref cpu, ref gpu);
+				getTemp(ref cpu, ref gpu);
 				if (gpu != 0)
                 {
 					for(int i = 0; i < 5; i ++)
@@ -216,9 +215,15 @@ namespace CustomFans_Helios
                         {
 							if(IsBetween(temps[i - 1, 1], temps[i, 1], gpu)) await set_single_custom_fan_state(false, (ulong)speed[i, 1], "GPU");
 						}
+						else if (i >= 1 && speed[i - 1, 1] > speed[i, 1])
+						{
+							await set_single_custom_fan_state(false, (ulong)speed[i - 1, 1], "CPU");
+							break;
+						}
 						else if(IsBetween(temps[i, 1], temps[i+1, 1], gpu))
 						{
 							await set_single_custom_fan_state(false, (ulong) speed[i, 1], "GPU");
+							break;
                         }
                     }
                 }
@@ -228,18 +233,25 @@ namespace CustomFans_Helios
 					{
 						if (i == 4)
 						{
-							if(IsBetween(temps[i - 1, 0], temps[i, 0], cpu)) await set_single_custom_fan_state(false, (ulong)speed[i, 0], "CPU");
+							if (IsBetween(temps[i - 1, 0], temps[i, 0], cpu)) await set_single_custom_fan_state(false, (ulong)speed[i, 0], "CPU");
+						}
+						else if(i >= 1 && speed[i-1, 0] > speed[i, 0])
+                        {
+							await set_single_custom_fan_state(false, (ulong)speed[i-1, 0], "CPU");
+							break;
 						}
 						else if (IsBetween(temps[i, 0], temps[i + 1, 0], cpu))
 						{
 							await set_single_custom_fan_state(false, (ulong)speed[i, 0], "CPU");
+							break;
 						}
+						
 					}
 				}
 			}
 		}
 
-		private void getCpuTemp(ref int cpu, ref int gpu)
+		private void getTemp(ref int cpu, ref int gpu)
         {
 			Computer myComputer;
 			myComputer = new Computer();
