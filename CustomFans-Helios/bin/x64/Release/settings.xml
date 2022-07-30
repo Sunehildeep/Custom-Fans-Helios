@@ -15,13 +15,13 @@
   <Speed>
     <GPU>1</GPU>
     <GPU>3</GPU>
-    <GPU>7</GPU>
-    <GPU>9</GPU>
+    <GPU>5</GPU>
+    <GPU>8</GPU>
     <GPU>10</GPU>
-    <CPU>10</CPU>
-    <CPU>10</CPU>
-    <CPU>10</CPU>
-    <CPU>10</CPU>
+    <CPU>1</CPU>
+    <CPU>2</CPU>
+    <CPU>4</CPU>
+    <CPU>6</CPU>
     <CPU>10</CPU>
   </Speed>
 </rootElement>

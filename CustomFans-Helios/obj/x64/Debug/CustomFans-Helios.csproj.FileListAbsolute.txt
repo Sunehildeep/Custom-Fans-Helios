@@ -3,7 +3,6 @@ C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\bin\x64\Debug\Cu
 C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\bin\x64\Debug\CustomFans-Helios.pdb
 C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\bin\x64\Debug\OpenHardwareMonitorLib.dll
 C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\bin\x64\Debug\TsDotNetLib.dll
-C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Debug\CustomFans_Helios.Form1.resources
 C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Debug\CustomFans_Helios.Properties.Resources.resources
 C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Debug\CustomFans-Helios.csproj.GenerateResource.cache
 C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Debug\CustomFans-Helios.csproj.CoreCompileInputs.cache
@@ -11,3 +10,4 @@ C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Debug\Cu
 C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Debug\CustomFans-Helios.exe
 C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Debug\CustomFans-Helios.pdb
 C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Debug\CustomFans-Helios.csproj.AssemblyReference.cache
+C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Debug\CustomFans_Helios.Form1.resources
