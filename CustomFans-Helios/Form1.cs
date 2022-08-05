@@ -21,6 +21,7 @@ namespace CustomFans_Helios
 		private bool[,] fanSet;
 		private XDocument _doc;
 		private string _filename = Path.Combine(Application.StartupPath, "settings.xml");
+		
 		public const int WM_NCLBUTTONDOWN = 0xA1;
 		public const int HT_CAPTION = 0x2;
 		RegistryKey customFansStartup = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rootElement>
+  <Temps>
+    <GPU>30</GPU>
+    <GPU>60</GPU>
+    <GPU>70</GPU>
+    <GPU>75</GPU>
+    <GPU>85</GPU>
+    <CPU>30</CPU>
+    <CPU>55</CPU>
+    <CPU>60</CPU>
+    <CPU>75</CPU>
+    <CPU>85</CPU>
+  </Temps>
+  <Speed>
+    <GPU>1</GPU>
+    <GPU>3</GPU>
+    <GPU>5</GPU>
+    <GPU>8</GPU>
+    <GPU>10</GPU>
+    <CPU>1</CPU>
+    <CPU>2</CPU>
+    <CPU>4</CPU>
+    <CPU>6</CPU>
+    <CPU>10</CPU>
+  </Speed>
+  <Settings>
+    <Startup>true</Startup>
+  </Settings>
+</rootElement>
