@@ -6,3 +6,6 @@ C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Release\
 C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Release\CustomFans-Helios.exe
 C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Release\CustomFans-Helios.csproj.AssemblyReference.cache
 C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\bin\x64\Release\settings.xml
+C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\bin\x64\Release\OpenHardwareMonitorLib.dll
+C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\bin\x64\Release\TsDotNetLib.dll
+C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Release\CustomFans-Helios.csproj.CopyComplete

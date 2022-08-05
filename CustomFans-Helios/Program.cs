@@ -38,6 +38,7 @@ namespace CustomFans_Helios
         private static Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs e)
         {
             string _resName = "CustomFans-Helios.libs." + new AssemblyName(e.Name).Name + ".dll";
+            
             using (var _stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(_resName))
             {
                 byte[] _data = new byte[_stream.Length];

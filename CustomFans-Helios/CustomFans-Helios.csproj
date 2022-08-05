@@ -81,7 +81,7 @@
   <ItemGroup>
     <Reference Include="OpenHardwareMonitorLib">
       <HintPath>..\..\..\..\Downloads\openhardwaremonitor-v0.9.6\OpenHardwareMonitor\OpenHardwareMonitorLib.dll</HintPath>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -96,7 +96,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="TsDotNetLib">
       <HintPath>..\..\..\..\OneDrive\Documents\TsDotNetLib.dll</HintPath>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -121,7 +121,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="app.manifest" />
-    <EmbeddedResource Include="libs\OpenHardwareMonitorLib.sys" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -140,8 +139,6 @@
     <Content Include="settings.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <EmbeddedResource Include="libs\OpenHardwareMonitorLib.dll" />
-    <EmbeddedResource Include="libs\TsDotNetLib.dll" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
