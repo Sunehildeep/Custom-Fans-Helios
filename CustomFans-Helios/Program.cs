@@ -23,7 +23,6 @@ namespace CustomFans_Helios
                     StartAsAdmin(Assembly.GetExecutingAssembly().Location);
                     return;
                 }
-                AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new Form1());
@@ -35,17 +34,6 @@ namespace CustomFans_Helios
             }
         }
 
-        private static Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs e)
-        {
-            string _resName = "CustomFans-Helios.libs." + new AssemblyName(e.Name).Name + ".dll";
-            
-            using (var _stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(_resName))
-            {
-                byte[] _data = new byte[_stream.Length];
-                _stream.Read(_data, 0, _data.Length);
-                return Assembly.Load(_data);
-            }
-        }
         public static bool IsAdministrator()
         {
             var identity = WindowsIdentity.GetCurrent();
