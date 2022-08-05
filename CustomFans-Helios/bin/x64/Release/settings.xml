@@ -24,4 +24,7 @@
     <CPU>6</CPU>
     <CPU>10</CPU>
   </Speed>
+  <Settings>
+    <Startup>true</Startup>
+  </Settings>
 </rootElement>

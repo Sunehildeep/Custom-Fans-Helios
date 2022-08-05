@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Reflection;
+using System.Security.Principal;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -15,6 +18,11 @@ namespace CustomFans_Helios
         {
             if (mutex.WaitOne(TimeSpan.Zero, true))
             {
+                if (!IsAdministrator())
+                {
+                    StartAsAdmin(Assembly.GetExecutingAssembly().Location);
+                    return;
+                }
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new Form1());
@@ -24,6 +32,27 @@ namespace CustomFans_Helios
                 MessageBox.Show("Error: Only one instance at a time!");
                 Environment.Exit(1);
             }
+        }
+        public static bool IsAdministrator()
+        {
+            var identity = WindowsIdentity.GetCurrent();
+            var principal = new WindowsPrincipal(identity);
+            return principal.IsInRole(WindowsBuiltInRole.Administrator);
+        }
+
+        public static void StartAsAdmin(string fileName)
+        {
+            var proc = new Process
+            {
+                StartInfo =
+                {
+                    FileName = fileName,
+                    UseShellExecute = true,
+                    Verb = "runas"
+                }
+            };
+
+            proc.Start();
         }
     }
 }

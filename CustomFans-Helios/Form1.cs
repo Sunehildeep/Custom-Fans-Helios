@@ -1,4 +1,5 @@
-﻿using OpenHardwareMonitor.Hardware;
+﻿using Microsoft.Win32;
+using OpenHardwareMonitor.Hardware;
 using System;
 using System.IO;
 using System.IO.Pipes;
@@ -22,6 +23,7 @@ namespace CustomFans_Helios
 		private string _filename = Path.Combine(Application.StartupPath, "settings.xml");
 		public const int WM_NCLBUTTONDOWN = 0xA1;
 		public const int HT_CAPTION = 0x2;
+		RegistryKey customFansStartup = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 
 		[System.Runtime.InteropServices.DllImport("user32.dll")]
 		public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
@@ -31,7 +33,15 @@ namespace CustomFans_Helios
 		public Form1()
 		{
 			InitializeComponent();
-			
+			if (customFansStartup.GetValue("CustomFans-Helios") == null)
+			{
+				checkBox1.Checked = false;
+			}
+			else
+			{
+				checkBox1.Checked = true;
+			}
+
 			loadDataFromXml();
 			fetchData();
 
@@ -117,6 +127,9 @@ namespace CustomFans_Helios
 				trackBar7.Value = Convert.ToInt32(node.Value);
 				node = _doc.XPathSelectElement("//Speed/CPU[5]");
 				trackBar6.Value = Convert.ToInt32(node.Value);
+
+				node = _doc.XPathSelectElement("//Settings/Startup[1]");
+				checkBox2.Checked = (bool) node;
 			}
 			catch { }
 		}
@@ -127,6 +140,7 @@ namespace CustomFans_Helios
 			{
 				_doc.XPathSelectElement("//Temps").RemoveAll();
 				_doc.XPathSelectElement("//Speed").RemoveAll();
+				_doc.XPathSelectElement("//Settings").RemoveAll();
 
 				_doc.XPathSelectElement("//Temps").Add(new XElement("GPU", numericUpDown1.Value));
 				_doc.XPathSelectElement("//Temps").Add(new XElement("GPU", numericUpDown2.Value));
@@ -152,6 +166,9 @@ namespace CustomFans_Helios
 				_doc.XPathSelectElement("//Speed").Add(new XElement("CPU", trackBar7.Value));
 				_doc.XPathSelectElement("//Speed").Add(new XElement("CPU", trackBar6.Value));
 
+				_doc.XPathSelectElement("//Settings").Add(new XElement("Startup", checkBox2.Checked));
+
+
 				_doc.Save(_filename);
 			}
 			catch { }
@@ -162,9 +179,14 @@ namespace CustomFans_Helios
 		{
 			try
 			{
-				string[] args = Environment.GetCommandLineArgs();
+				if (checkBox2.Checked) this.WindowState = FormWindowState.Minimized;
 
-				if (args[1] == "-m") this.WindowState = FormWindowState.Minimized;
+				else
+				{
+					string[] args = Environment.GetCommandLineArgs();
+
+					if (args[1] == "-m") this.WindowState = FormWindowState.Minimized;
+				}
 			}
 			catch { }
 
@@ -211,7 +233,7 @@ namespace CustomFans_Helios
 
 		private async void closeApp(FormClosingEventArgs e = null)
 		{
-			if (Registry.CheckLM("SOFTWARE\\OEM\\PredatorSense\\FanControl", "CurrentFanMode", 0u) == 0u)
+			if (TsDotNetLib.Registry.CheckLM("SOFTWARE\\OEM\\PredatorSense\\FanControl", "CurrentFanMode", 0u) == 0u)
 			{
 				if (e != null) e.Cancel = true;
 				try
@@ -301,7 +323,7 @@ namespace CustomFans_Helios
 				if (cpu != 0) label8.Text = Convert.ToString(cpu) + " c";
 			});
 
-			if (Registry.CheckLM("SOFTWARE\\OEM\\PredatorSense\\FanControl", "CurrentFanMode", 0u) == 0u)
+			if (TsDotNetLib.Registry.CheckLM("SOFTWARE\\OEM\\PredatorSense\\FanControl", "CurrentFanMode", 0u) == 0u)
 			{
 				if (gpu != 0)
 				{
@@ -502,6 +524,23 @@ namespace CustomFans_Helios
 		{
 			closeApp();
 		}
-	}
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+			if(checkBox1.Checked)
+            {
+				customFansStartup.SetValue("CustomFans-Helios", Application.ExecutablePath);
+			}
+			else
+            {
+				customFansStartup.DeleteValue("CustomFans-Helios", false);
+			}
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+			saveDataToXml();
+		}
+    }
 	
 }
