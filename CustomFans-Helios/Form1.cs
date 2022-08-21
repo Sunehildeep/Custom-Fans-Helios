@@ -30,7 +30,12 @@ namespace CustomFans_Helios
 		public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 		[System.Runtime.InteropServices.DllImport("user32.dll")]
 		public static extern bool ReleaseCapture();
-
+		public enum Overclocked_Level
+		{
+			Normal,
+			Faster,
+			Turbo
+		}
 		public Form1()
 		{
 			InitializeComponent();
@@ -45,7 +50,6 @@ namespace CustomFans_Helios
 
 			loadDataFromXml();
 			fetchData();
-
 			aTimer = new System.Timers.Timer(1000);
 			aTimer.Elapsed += curveCheck;
 			aTimer.AutoReset = true;
@@ -83,8 +87,7 @@ namespace CustomFans_Helios
 			try
 			{
 				_doc = XDocument.Load(_filename);
-				_doc.Save(_filename);
-
+				
 				XElement node = _doc.XPathSelectElement("//Temps/GPU[1]");
 				numericUpDown1.Value = Convert.ToDecimal(node.Value);
 				node = _doc.XPathSelectElement("//Temps/GPU[2]");
@@ -129,8 +132,12 @@ namespace CustomFans_Helios
 				node = _doc.XPathSelectElement("//Speed/CPU[5]");
 				trackBar6.Value = Convert.ToInt32(node.Value);
 
+				node = _doc.XPathSelectElement("//Settings/CPUPL[1]");
+				checkBox3.Checked = (bool)node;
+
 				node = _doc.XPathSelectElement("//Settings/Startup[1]");
 				checkBox2.Checked = (bool) node;
+
 			}
 			catch { }
 		}
@@ -168,7 +175,7 @@ namespace CustomFans_Helios
 				_doc.XPathSelectElement("//Speed").Add(new XElement("CPU", trackBar6.Value));
 
 				_doc.XPathSelectElement("//Settings").Add(new XElement("Startup", checkBox2.Checked));
-
+				_doc.XPathSelectElement("//Settings").Add(new XElement("CPUPL", checkBox3.Checked));
 
 				_doc.Save(_filename);
 			}
@@ -462,6 +469,33 @@ namespace CustomFans_Helios
 			}
 		}
 
+		public static async Task<int> cpu_set_oc_level(Overclocked_Level level)
+		{
+			int output = -1;
+			try
+			{
+				NamedPipeClientStream cline_stream = new NamedPipeClientStream(".", "predatorsense_service_namedpipe", (PipeDirection)3);
+				cline_stream.Connect();
+				output = await Task.Run(delegate
+				{
+					IPCMethods.SendCommandByNamedPipe(cline_stream, 39, new object[1]
+					{
+						(int)level
+					});
+					((PipeStream)cline_stream).WaitForPipeDrain();
+					byte[] array = new byte[9];
+					((Stream)(object)cline_stream).Read(array, 0, array.Length);
+					return BitConverter.ToInt32(array, 5);
+				}).ConfigureAwait(continueOnCapturedContext: false);
+				((Stream)(object)cline_stream).Close();
+				return output;
+			}
+			catch (Exception)
+			{
+				return output;
+			}
+		}
+
 		public static async Task<bool> set_single_custom_fan_state(bool auto, ulong percentage, string fan_group_type)
 		{
 			bool ret = true;
@@ -540,6 +574,19 @@ namespace CustomFans_Helios
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
+			saveDataToXml();
+		}
+
+        private async void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+			if (checkBox3.Checked)
+			{
+				await cpu_set_oc_level(Overclocked_Level.Turbo);
+			}
+			else
+            {
+				await cpu_set_oc_level(Overclocked_Level.Normal);
+            }
 			saveDataToXml();
 		}
     }

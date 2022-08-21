@@ -26,5 +26,6 @@
   </Speed>
   <Settings>
     <Startup>true</Startup>
+    <CPUPL>true</CPUPL>
   </Settings>
 </rootElement>
