@@ -70,6 +70,9 @@ namespace CustomFans_Helios
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -98,10 +101,11 @@ namespace CustomFans_Helios
             // trackBar1
             // 
             this.trackBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.trackBar1.Location = new System.Drawing.Point(43, 151);
+            this.trackBar1.Location = new System.Drawing.Point(32, 123);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(2);
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar1.Size = new System.Drawing.Size(56, 270);
+            this.trackBar1.Size = new System.Drawing.Size(45, 219);
             this.trackBar1.TabIndex = 0;
             this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.trackBar1.Value = 1;
@@ -109,11 +113,13 @@ namespace CustomFans_Helios
             // numericUpDown1
             // 
             this.numericUpDown1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
-            this.numericUpDown1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numericUpDown1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.numericUpDown1.Location = new System.Drawing.Point(47, 427);
+            this.numericUpDown1.Location = new System.Drawing.Point(35, 347);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(52, 26);
+            this.numericUpDown1.Size = new System.Drawing.Size(39, 22);
             this.numericUpDown1.TabIndex = 1;
             this.numericUpDown1.Value = new decimal(new int[] {
             30,
@@ -124,11 +130,13 @@ namespace CustomFans_Helios
             // numericUpDown2
             // 
             this.numericUpDown2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
-            this.numericUpDown2.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numericUpDown2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown2.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.numericUpDown2.Location = new System.Drawing.Point(130, 427);
+            this.numericUpDown2.Location = new System.Drawing.Point(98, 347);
+            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(46, 26);
+            this.numericUpDown2.Size = new System.Drawing.Size(34, 22);
             this.numericUpDown2.TabIndex = 3;
             this.numericUpDown2.Value = new decimal(new int[] {
             60,
@@ -138,10 +146,11 @@ namespace CustomFans_Helios
             // 
             // trackBar2
             // 
-            this.trackBar2.Location = new System.Drawing.Point(130, 151);
+            this.trackBar2.Location = new System.Drawing.Point(98, 123);
+            this.trackBar2.Margin = new System.Windows.Forms.Padding(2);
             this.trackBar2.Name = "trackBar2";
             this.trackBar2.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar2.Size = new System.Drawing.Size(56, 270);
+            this.trackBar2.Size = new System.Drawing.Size(45, 219);
             this.trackBar2.TabIndex = 2;
             this.trackBar2.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.trackBar2.Value = 3;
@@ -149,11 +158,13 @@ namespace CustomFans_Helios
             // numericUpDown3
             // 
             this.numericUpDown3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
-            this.numericUpDown3.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numericUpDown3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown3.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.numericUpDown3.Location = new System.Drawing.Point(210, 427);
+            this.numericUpDown3.Location = new System.Drawing.Point(158, 347);
+            this.numericUpDown3.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(47, 26);
+            this.numericUpDown3.Size = new System.Drawing.Size(35, 22);
             this.numericUpDown3.TabIndex = 5;
             this.numericUpDown3.Value = new decimal(new int[] {
             70,
@@ -163,10 +174,11 @@ namespace CustomFans_Helios
             // 
             // trackBar3
             // 
-            this.trackBar3.Location = new System.Drawing.Point(210, 151);
+            this.trackBar3.Location = new System.Drawing.Point(158, 123);
+            this.trackBar3.Margin = new System.Windows.Forms.Padding(2);
             this.trackBar3.Name = "trackBar3";
             this.trackBar3.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar3.Size = new System.Drawing.Size(56, 270);
+            this.trackBar3.Size = new System.Drawing.Size(45, 219);
             this.trackBar3.TabIndex = 4;
             this.trackBar3.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.trackBar3.Value = 7;
@@ -174,11 +186,13 @@ namespace CustomFans_Helios
             // numericUpDown4
             // 
             this.numericUpDown4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
-            this.numericUpDown4.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numericUpDown4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown4.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.numericUpDown4.Location = new System.Drawing.Point(290, 427);
+            this.numericUpDown4.Location = new System.Drawing.Point(218, 347);
+            this.numericUpDown4.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(46, 26);
+            this.numericUpDown4.Size = new System.Drawing.Size(34, 22);
             this.numericUpDown4.TabIndex = 7;
             this.numericUpDown4.Value = new decimal(new int[] {
             75,
@@ -188,10 +202,11 @@ namespace CustomFans_Helios
             // 
             // trackBar4
             // 
-            this.trackBar4.Location = new System.Drawing.Point(290, 151);
+            this.trackBar4.Location = new System.Drawing.Point(218, 123);
+            this.trackBar4.Margin = new System.Windows.Forms.Padding(2);
             this.trackBar4.Name = "trackBar4";
             this.trackBar4.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar4.Size = new System.Drawing.Size(56, 270);
+            this.trackBar4.Size = new System.Drawing.Size(45, 219);
             this.trackBar4.TabIndex = 6;
             this.trackBar4.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.trackBar4.Value = 9;
@@ -199,11 +214,13 @@ namespace CustomFans_Helios
             // numericUpDown5
             // 
             this.numericUpDown5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
-            this.numericUpDown5.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numericUpDown5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown5.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.numericUpDown5.Location = new System.Drawing.Point(385, 427);
+            this.numericUpDown5.Location = new System.Drawing.Point(289, 347);
+            this.numericUpDown5.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(44, 26);
+            this.numericUpDown5.Size = new System.Drawing.Size(33, 22);
             this.numericUpDown5.TabIndex = 9;
             this.numericUpDown5.Value = new decimal(new int[] {
             85,
@@ -213,10 +230,11 @@ namespace CustomFans_Helios
             // 
             // trackBar5
             // 
-            this.trackBar5.Location = new System.Drawing.Point(385, 151);
+            this.trackBar5.Location = new System.Drawing.Point(289, 123);
+            this.trackBar5.Margin = new System.Windows.Forms.Padding(2);
             this.trackBar5.Name = "trackBar5";
             this.trackBar5.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar5.Size = new System.Drawing.Size(56, 270);
+            this.trackBar5.Size = new System.Drawing.Size(45, 219);
             this.trackBar5.TabIndex = 8;
             this.trackBar5.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.trackBar5.Value = 10;
@@ -228,9 +246,10 @@ namespace CustomFans_Helios
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(560, 475);
+            this.button1.Location = new System.Drawing.Point(420, 434);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 37);
+            this.button1.Size = new System.Drawing.Size(79, 30);
             this.button1.TabIndex = 10;
             this.button1.Text = "Apply";
             this.button1.UseVisualStyleBackColor = false;
@@ -239,11 +258,13 @@ namespace CustomFans_Helios
             // numericUpDown6
             // 
             this.numericUpDown6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
-            this.numericUpDown6.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numericUpDown6.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown6.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.numericUpDown6.Location = new System.Drawing.Point(1183, 427);
+            this.numericUpDown6.Location = new System.Drawing.Point(887, 347);
+            this.numericUpDown6.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(46, 26);
+            this.numericUpDown6.Size = new System.Drawing.Size(34, 22);
             this.numericUpDown6.TabIndex = 20;
             this.numericUpDown6.Value = new decimal(new int[] {
             85,
@@ -253,10 +274,11 @@ namespace CustomFans_Helios
             // 
             // trackBar6
             // 
-            this.trackBar6.Location = new System.Drawing.Point(1183, 151);
+            this.trackBar6.Location = new System.Drawing.Point(887, 123);
+            this.trackBar6.Margin = new System.Windows.Forms.Padding(2);
             this.trackBar6.Name = "trackBar6";
             this.trackBar6.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar6.Size = new System.Drawing.Size(56, 270);
+            this.trackBar6.Size = new System.Drawing.Size(45, 219);
             this.trackBar6.TabIndex = 19;
             this.trackBar6.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.trackBar6.Value = 10;
@@ -264,11 +286,13 @@ namespace CustomFans_Helios
             // numericUpDown7
             // 
             this.numericUpDown7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
-            this.numericUpDown7.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numericUpDown7.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown7.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.numericUpDown7.Location = new System.Drawing.Point(1092, 427);
+            this.numericUpDown7.Location = new System.Drawing.Point(819, 347);
+            this.numericUpDown7.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown7.Name = "numericUpDown7";
-            this.numericUpDown7.Size = new System.Drawing.Size(46, 26);
+            this.numericUpDown7.Size = new System.Drawing.Size(34, 22);
             this.numericUpDown7.TabIndex = 18;
             this.numericUpDown7.Value = new decimal(new int[] {
             75,
@@ -278,10 +302,11 @@ namespace CustomFans_Helios
             // 
             // trackBar7
             // 
-            this.trackBar7.Location = new System.Drawing.Point(1092, 151);
+            this.trackBar7.Location = new System.Drawing.Point(819, 123);
+            this.trackBar7.Margin = new System.Windows.Forms.Padding(2);
             this.trackBar7.Name = "trackBar7";
             this.trackBar7.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar7.Size = new System.Drawing.Size(56, 270);
+            this.trackBar7.Size = new System.Drawing.Size(45, 219);
             this.trackBar7.TabIndex = 17;
             this.trackBar7.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.trackBar7.Value = 9;
@@ -289,11 +314,13 @@ namespace CustomFans_Helios
             // numericUpDown8
             // 
             this.numericUpDown8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
-            this.numericUpDown8.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown8.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numericUpDown8.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown8.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.numericUpDown8.Location = new System.Drawing.Point(999, 427);
+            this.numericUpDown8.Location = new System.Drawing.Point(749, 347);
+            this.numericUpDown8.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown8.Name = "numericUpDown8";
-            this.numericUpDown8.Size = new System.Drawing.Size(46, 26);
+            this.numericUpDown8.Size = new System.Drawing.Size(34, 22);
             this.numericUpDown8.TabIndex = 16;
             this.numericUpDown8.Value = new decimal(new int[] {
             60,
@@ -303,10 +330,11 @@ namespace CustomFans_Helios
             // 
             // trackBar8
             // 
-            this.trackBar8.Location = new System.Drawing.Point(999, 151);
+            this.trackBar8.Location = new System.Drawing.Point(749, 123);
+            this.trackBar8.Margin = new System.Windows.Forms.Padding(2);
             this.trackBar8.Name = "trackBar8";
             this.trackBar8.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar8.Size = new System.Drawing.Size(56, 270);
+            this.trackBar8.Size = new System.Drawing.Size(45, 219);
             this.trackBar8.TabIndex = 15;
             this.trackBar8.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.trackBar8.Value = 7;
@@ -314,11 +342,13 @@ namespace CustomFans_Helios
             // numericUpDown9
             // 
             this.numericUpDown9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
-            this.numericUpDown9.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown9.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numericUpDown9.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown9.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.numericUpDown9.Location = new System.Drawing.Point(910, 427);
+            this.numericUpDown9.Location = new System.Drawing.Point(682, 347);
+            this.numericUpDown9.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown9.Name = "numericUpDown9";
-            this.numericUpDown9.Size = new System.Drawing.Size(46, 26);
+            this.numericUpDown9.Size = new System.Drawing.Size(34, 22);
             this.numericUpDown9.TabIndex = 14;
             this.numericUpDown9.Value = new decimal(new int[] {
             55,
@@ -328,10 +358,11 @@ namespace CustomFans_Helios
             // 
             // trackBar9
             // 
-            this.trackBar9.Location = new System.Drawing.Point(910, 151);
+            this.trackBar9.Location = new System.Drawing.Point(682, 123);
+            this.trackBar9.Margin = new System.Windows.Forms.Padding(2);
             this.trackBar9.Name = "trackBar9";
             this.trackBar9.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar9.Size = new System.Drawing.Size(56, 270);
+            this.trackBar9.Size = new System.Drawing.Size(45, 219);
             this.trackBar9.TabIndex = 13;
             this.trackBar9.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.trackBar9.Value = 3;
@@ -339,11 +370,13 @@ namespace CustomFans_Helios
             // numericUpDown10
             // 
             this.numericUpDown10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
-            this.numericUpDown10.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown10.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numericUpDown10.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown10.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.numericUpDown10.Location = new System.Drawing.Point(820, 427);
+            this.numericUpDown10.Location = new System.Drawing.Point(615, 347);
+            this.numericUpDown10.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown10.Name = "numericUpDown10";
-            this.numericUpDown10.Size = new System.Drawing.Size(46, 26);
+            this.numericUpDown10.Size = new System.Drawing.Size(34, 22);
             this.numericUpDown10.TabIndex = 12;
             this.numericUpDown10.Value = new decimal(new int[] {
             30,
@@ -353,10 +386,11 @@ namespace CustomFans_Helios
             // 
             // trackBar10
             // 
-            this.trackBar10.Location = new System.Drawing.Point(820, 151);
+            this.trackBar10.Location = new System.Drawing.Point(615, 123);
+            this.trackBar10.Margin = new System.Windows.Forms.Padding(2);
             this.trackBar10.Name = "trackBar10";
             this.trackBar10.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar10.Size = new System.Drawing.Size(56, 270);
+            this.trackBar10.Size = new System.Drawing.Size(45, 219);
             this.trackBar10.TabIndex = 11;
             this.trackBar10.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.trackBar10.Value = 1;
@@ -366,9 +400,10 @@ namespace CustomFans_Helios
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
-            this.label1.Location = new System.Drawing.Point(155, 102);
+            this.label1.Location = new System.Drawing.Point(116, 83);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 20);
+            this.label1.Size = new System.Drawing.Size(132, 17);
             this.label1.TabIndex = 22;
             this.label1.Text = "GPU Fan Speeds";
             // 
@@ -377,9 +412,10 @@ namespace CustomFans_Helios
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
-            this.label2.Location = new System.Drawing.Point(949, 102);
+            this.label2.Location = new System.Drawing.Point(712, 83);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 20);
+            this.label2.Size = new System.Drawing.Size(130, 17);
             this.label2.TabIndex = 23;
             this.label2.Text = "CPU Fan Speeds";
             // 
@@ -395,9 +431,10 @@ namespace CustomFans_Helios
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
-            this.label3.Location = new System.Drawing.Point(192, 475);
+            this.label3.Location = new System.Drawing.Point(144, 386);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 20);
+            this.label3.Size = new System.Drawing.Size(56, 17);
             this.label3.TabIndex = 24;
             this.label3.Text = "Temps";
             // 
@@ -406,9 +443,10 @@ namespace CustomFans_Helios
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
-            this.label4.Location = new System.Drawing.Point(990, 475);
+            this.label4.Location = new System.Drawing.Point(742, 386);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 20);
+            this.label4.Size = new System.Drawing.Size(56, 17);
             this.label4.TabIndex = 25;
             this.label4.Text = "Temps";
             // 
@@ -423,7 +461,7 @@ namespace CustomFans_Helios
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1315, 33);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(986, 27);
             this.flowLayoutPanel1.TabIndex = 26;
             this.flowLayoutPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
@@ -436,10 +474,10 @@ namespace CustomFans_Helios
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(1225, 0);
+            this.button2.Location = new System.Drawing.Point(918, 0);
             this.button2.Margin = new System.Windows.Forms.Padding(0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 29);
+            this.button2.Size = new System.Drawing.Size(68, 25);
             this.button2.TabIndex = 0;
             this.button2.Text = "Close";
             this.button2.UseVisualStyleBackColor = false;
@@ -453,10 +491,10 @@ namespace CustomFans_Helios
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(1115, 0);
+            this.button3.Location = new System.Drawing.Point(836, 0);
             this.button3.Margin = new System.Windows.Forms.Padding(0);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(110, 29);
+            this.button3.Size = new System.Drawing.Size(82, 25);
             this.button3.TabIndex = 1;
             this.button3.Text = "Minimize";
             this.button3.UseVisualStyleBackColor = false;
@@ -468,10 +506,10 @@ namespace CustomFans_Helios
             this.label9.Dock = System.Windows.Forms.DockStyle.Left;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
-            this.label9.Location = new System.Drawing.Point(10, 5);
-            this.label9.Margin = new System.Windows.Forms.Padding(0, 5, 880, 0);
+            this.label9.Location = new System.Drawing.Point(7, 4);
+            this.label9.Margin = new System.Windows.Forms.Padding(0, 4, 660, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(225, 24);
+            this.label9.Size = new System.Drawing.Size(169, 21);
             this.label9.TabIndex = 30;
             this.label9.Text = "Custom Fans - Helios";
             // 
@@ -480,18 +518,20 @@ namespace CustomFans_Helios
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(516, 151);
+            this.panel1.Location = new System.Drawing.Point(387, 123);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.Size = new System.Drawing.Size(150, 81);
             this.panel1.TabIndex = 27;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(63, 42);
+            this.label7.Location = new System.Drawing.Point(47, 34);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(34, 40);
+            this.label7.Size = new System.Drawing.Size(29, 33);
             this.label7.TabIndex = 30;
             this.label7.Text = "0";
             // 
@@ -501,9 +541,10 @@ namespace CustomFans_Helios
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
-            this.label5.Location = new System.Drawing.Point(74, 13);
+            this.label5.Location = new System.Drawing.Point(56, 11);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 20);
+            this.label5.Size = new System.Drawing.Size(41, 17);
             this.label5.TabIndex = 29;
             this.label5.Text = "GPU";
             // 
@@ -512,18 +553,20 @@ namespace CustomFans_Helios
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(516, 303);
+            this.panel2.Location = new System.Drawing.Point(387, 246);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 100);
+            this.panel2.Size = new System.Drawing.Size(150, 81);
             this.panel2.TabIndex = 28;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(63, 47);
+            this.label8.Location = new System.Drawing.Point(47, 38);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(34, 40);
+            this.label8.Size = new System.Drawing.Size(29, 33);
             this.label8.TabIndex = 31;
             this.label8.Text = "0";
             // 
@@ -533,9 +576,10 @@ namespace CustomFans_Helios
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
-            this.label6.Location = new System.Drawing.Point(74, 17);
+            this.label6.Location = new System.Drawing.Point(56, 14);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 20);
+            this.label6.Size = new System.Drawing.Size(39, 17);
             this.label6.TabIndex = 30;
             this.label6.Text = "CPU";
             // 
@@ -544,9 +588,10 @@ namespace CustomFans_Helios
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
-            this.checkBox1.Location = new System.Drawing.Point(530, 65);
+            this.checkBox1.Location = new System.Drawing.Point(398, 100);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(169, 27);
+            this.checkBox1.Size = new System.Drawing.Size(132, 22);
             this.checkBox1.TabIndex = 29;
             this.checkBox1.Text = "Launch at startup";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -557,9 +602,10 @@ namespace CustomFans_Helios
             this.checkBox2.AutoSize = true;
             this.checkBox2.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
-            this.checkBox2.Location = new System.Drawing.Point(530, 95);
+            this.checkBox2.Location = new System.Drawing.Point(398, 77);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(232, 27);
+            this.checkBox2.Size = new System.Drawing.Size(182, 22);
             this.checkBox2.TabIndex = 30;
             this.checkBox2.Text = "Run minimized at startup";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -570,20 +616,62 @@ namespace CustomFans_Helios
             this.checkBox3.AutoSize = true;
             this.checkBox3.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
-            this.checkBox3.Location = new System.Drawing.Point(530, 36);
+            this.checkBox3.Location = new System.Drawing.Point(398, 29);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(214, 27);
+            this.checkBox3.Size = new System.Drawing.Size(169, 22);
             this.checkBox3.TabIndex = 31;
             this.checkBox3.Text = "Run CPU At Extreme PL";
             this.checkBox3.UseVisualStyleBackColor = true;
             this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
+            this.checkBox4.Location = new System.Drawing.Point(398, 52);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(156, 22);
+            this.checkBox4.TabIndex = 32;
+            this.checkBox4.Text = "Run GPU At Max TDP";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
+            this.label10.Location = new System.Drawing.Point(326, 373);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(296, 17);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "Threshold before switching speed (in s)";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(217)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(447, 396);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(30, 19);
+            this.textBox1.TabIndex = 34;
+            this.textBox1.Text = "5";
+           
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1315, 536);
+            this.ClientSize = new System.Drawing.Size(986, 487);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
@@ -617,6 +705,7 @@ namespace CustomFans_Helios
             this.Controls.Add(this.trackBar1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -697,6 +786,9 @@ namespace CustomFans_Helios
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

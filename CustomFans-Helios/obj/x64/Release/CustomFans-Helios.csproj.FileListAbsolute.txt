@@ -8,3 +8,12 @@ C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\bin\x64\Release\
 C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\bin\x64\Release\OpenHardwareMonitorLib.dll
 C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\bin\x64\Release\TsDotNetLib.dll
 C:\Users\pcgam\source\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Release\CustomFans-Helios.csproj.CopyComplete
+D:\Games\Saves\repos\CustomFans-Helios\CustomFans-Helios\bin\x64\Release\settings.xml
+D:\Games\Saves\repos\CustomFans-Helios\CustomFans-Helios\bin\x64\Release\CustomFans-Helios.exe
+D:\Games\Saves\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Release\CustomFans-Helios.csproj.AssemblyReference.cache
+D:\Games\Saves\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Release\CustomFans_Helios.Form1.resources
+D:\Games\Saves\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Release\CustomFans_Helios.Properties.Resources.resources
+D:\Games\Saves\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Release\CustomFans-Helios.csproj.GenerateResource.cache
+D:\Games\Saves\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Release\CustomFans-Helios.csproj.CoreCompileInputs.cache
+D:\Games\Saves\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Release\CustomFans-Helios.csproj.CopyComplete
+D:\Games\Saves\repos\CustomFans-Helios\CustomFans-Helios\obj\x64\Release\CustomFans-Helios.exe

@@ -16,16 +16,18 @@
     <GPU>1</GPU>
     <GPU>3</GPU>
     <GPU>5</GPU>
-    <GPU>8</GPU>
+    <GPU>7</GPU>
     <GPU>10</GPU>
     <CPU>1</CPU>
-    <CPU>2</CPU>
-    <CPU>4</CPU>
-    <CPU>6</CPU>
+    <CPU>3</CPU>
+    <CPU>5</CPU>
+    <CPU>8</CPU>
     <CPU>10</CPU>
   </Speed>
   <Settings>
     <Startup>true</Startup>
     <CPUPL>true</CPUPL>
+    <GPUPL>true</GPUPL>
+    <THRES>5</THRES>
   </Settings>
 </rootElement>

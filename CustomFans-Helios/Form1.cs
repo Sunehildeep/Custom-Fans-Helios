@@ -20,6 +20,18 @@ namespace CustomFans_Helios
 		private int[,] speed;
 		private bool[,] fanSet;
 		private XDocument _doc;
+		private bool turboTurnedOn = false;
+		private int[,] curveTick = new int[5, 2]
+		{
+			{0, 0},
+			{0, 0},
+			{0, 0},
+			{0, 0},
+			{0, 0}
+		};
+		private int threshold;
+		private bool higherFanActive = false;
+
 		private string _filename = Path.Combine(Application.StartupPath, "settings.xml");
 		
 		public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -87,8 +99,13 @@ namespace CustomFans_Helios
 			try
 			{
 				_doc = XDocument.Load(_filename);
-				
-				XElement node = _doc.XPathSelectElement("//Temps/GPU[1]");
+
+				XElement node = _doc.XPathSelectElement("//Settings/THRES[1]");
+				textBox1.Text = (string)node;
+
+				threshold = Convert.ToInt32(textBox1.Text);
+
+				node = _doc.XPathSelectElement("//Temps/GPU[1]");
 				numericUpDown1.Value = Convert.ToDecimal(node.Value);
 				node = _doc.XPathSelectElement("//Temps/GPU[2]");
 				numericUpDown2.Value = Convert.ToDecimal(node.Value);
@@ -135,8 +152,13 @@ namespace CustomFans_Helios
 				node = _doc.XPathSelectElement("//Settings/CPUPL[1]");
 				checkBox3.Checked = (bool)node;
 
+				node = _doc.XPathSelectElement("//Settings/GPUPL[1]");
+				checkBox4.Checked = (bool)node;
+
 				node = _doc.XPathSelectElement("//Settings/Startup[1]");
 				checkBox2.Checked = (bool) node;
+
+				
 
 			}
 			catch { }
@@ -176,6 +198,8 @@ namespace CustomFans_Helios
 
 				_doc.XPathSelectElement("//Settings").Add(new XElement("Startup", checkBox2.Checked));
 				_doc.XPathSelectElement("//Settings").Add(new XElement("CPUPL", checkBox3.Checked));
+				_doc.XPathSelectElement("//Settings").Add(new XElement("GPUPL", checkBox4.Checked));
+				_doc.XPathSelectElement("//Settings").Add(new XElement("THRES", threshold));
 
 				_doc.Save(_filename);
 			}
@@ -195,6 +219,8 @@ namespace CustomFans_Helios
 
 					if (args[1] == "-m") this.WindowState = FormWindowState.Minimized;
 				}
+				
+
 			}
 			catch { }
 
@@ -230,6 +256,8 @@ namespace CustomFans_Helios
 				{false, false},
 				{false, false}
 				};
+
+				
 			}
 			catch { }
 		}
@@ -268,18 +296,22 @@ namespace CustomFans_Helios
 		{
 			if (type == 0)
 			{
+				fanSet[id, 1] = true;
 				for (int i = 0; i < 5; i++)
 				{
-					if (i == id) fanSet[i, 1] = true;
-					else fanSet[i, 1] = false;
+					if (i == id) continue;
+					fanSet[i, 1] = false;
+					curveTick[i, 1] = 0;
 				}
 			}
 			else if (type == 1)
 			{
+				fanSet[id, 0] = true;
 				for (int i = 0; i < 5; i++)
 				{
-					if (i == id) fanSet[i, 0] = true;
-					else fanSet[i, 0] = false;
+					if (i == id) continue;
+					fanSet[i, 0] = false;
+					curveTick[i, 0] = 0;
 				}
 			}
 		}
@@ -291,26 +323,21 @@ namespace CustomFans_Helios
 				fanSet[i, 1] = false;
 				fanSet[i, 0] = false;
 			}
-
+			higherFanActive = false;
 		}
+
+	
 
 		private bool isCurveSet(int id, int type)
 		{
 			if (type == 0)
 			{
-				for (int i = 0; i < 5; i++)
-				{
-					if (i != id) continue;
-					if (fanSet[i, 1] == true) return true;
-				}
+				return fanSet[id, 1];
+		
 			}
 			else if (type == 1)
 			{
-				for (int i = 0; i < 5; i++)
-				{
-					if (i != id) continue;
-					if (fanSet[i, 0] == true) return true;
-				}
+				return fanSet[id, 0];
 			}
 			return false;
 		}
@@ -333,52 +360,115 @@ namespace CustomFans_Helios
 
 			if (TsDotNetLib.Registry.CheckLM("SOFTWARE\\OEM\\PredatorSense\\FanControl", "CurrentFanMode", 0u) == 0u)
 			{
+				if(turboTurnedOn)
+                {
+					if (checkBox3.Checked) await cpu_set_oc_level(Overclocked_Level.Turbo);
+					if (checkBox4.Checked) await gpu_set_oc_level(Overclocked_Level.Turbo);
+					turboTurnedOn = false;
+                }
 				if (gpu != 0)
 				{
-					for (int i = 0; i < 5; i++)
+					try
 					{
-						if (i == 4)
+						for (int i = 0; i < 5; i++)
 						{
-							if (IsBetween(temps[i - 1, 1], temps[i, 1], gpu)) await set_single_custom_fan_state(false, (ulong)speed[i, 1], "GPU");
-						}
-						else if (i >= 1 && speed[i - 1, 1] > speed[i, 1] && !isCurveSet(i - 1, 0))
-						{
-							await set_single_custom_fan_state(false, (ulong)speed[i - 1, 1], "GPU");
-
-							curveSet(i - 1, 0);
-							break;
-						}
-						else if (IsBetween(temps[i, 1], temps[i + 1, 1], gpu) && !isCurveSet(i, 0))
-						{
-							await set_single_custom_fan_state(false, (ulong)speed[i, 1], "GPU");
-							curveSet(i, 0);
-							break;
+							if (i >= 1 && speed[i - 1, 1] > speed[i, 1])
+							{
+								if (!isCurveSet(i, 0))
+								{
+									await set_single_custom_fan_state(false, (ulong)speed[i - 1, 1], "GPU");
+									curveSet(i, 0);
+									higherFanActive = true;
+								}
+								
+								break;
+							}
+							else if (i == 4)
+							{
+								if (IsBetween(temps[i - 1, 1], temps[i, 1], gpu))
+								{
+									if (curveTick[i, 0] < threshold) curveTick[i, 0]++;
+									else
+									{
+										await set_single_custom_fan_state(false, (ulong)speed[i, 1], "GPU");
+										curveSet(i, 0);
+									}
+								}
+								break;
+							}
+							else if (IsBetween(temps[i, 1], temps[i + 1, 1], gpu) && !isCurveSet(i, 0) && higherFanActive == false)
+							{
+								
+								if (curveTick[i, 0] < threshold) curveTick[i, 0]++;
+								else
+								{
+									await set_single_custom_fan_state(false, (ulong)speed[i, 1], "GPU");
+									curveSet(i, 0);
+								}
+								
+									
+								break;
+							}
 						}
 					}
+					catch(Exception f)
+                    {
+						MessageBox.Show(f.StackTrace);
+                    }
 				}
 				if (cpu != 0)
 				{
-					for (int i = 0; i < 5; i++)
+					try
 					{
-						if (i == 4)
+						for (int i = 0; i < 5; i++)
 						{
-							if (IsBetween(temps[i - 1, 0], temps[i, 0], cpu)) await set_single_custom_fan_state(false, (ulong)speed[i, 0], "CPU");
-						}
-						else if (i >= 1 && speed[i - 1, 0] > speed[i, 0] && !isCurveSet(i - 1, 1))
-						{
-							await set_single_custom_fan_state(false, (ulong)speed[i - 1, 0], "CPU");
-							curveSet(i - 1, 1);
-							break;
-						}
-						else if (IsBetween(temps[i, 0], temps[i + 1, 0], cpu) && !isCurveSet(i, 1))
-						{
-							await set_single_custom_fan_state(false, (ulong)speed[i, 0], "CPU");
-							curveSet(i, 1);
-							break;
-						}
+							if (i >= 1 && speed[i - 1, 0] > speed[i, 0])
+							{
+								if (!isCurveSet(i, 1))
+								{
+									await set_single_custom_fan_state(false, (ulong)speed[i - 1, 0], "CPU");
+									curveSet(i, 1);
+								}
+								break;
+							}
+							else if (i == 4)
+							{
+								if (IsBetween(temps[i - 1, 0], temps[i, 0], cpu) && !isCurveSet(i, 1))
+								{
+									if (curveTick[i, 1] < threshold) curveTick[i, 1]++;
+									else
+									{
+										await set_single_custom_fan_state(false, (ulong)speed[i, 0], "CPU");
 
+										curveSet(i, 1);
+									}
+								}
+								break;
+							}
+							else if (IsBetween(temps[i, 0], temps[i + 1, 0], cpu) && !isCurveSet(i, 1) && higherFanActive == false)
+							{
+								if (curveTick[i, 1] < threshold) curveTick[i, 1]++;
+								else
+								{
+									await set_single_custom_fan_state(false, (ulong)speed[i, 0], "CPU");
+									curveSet(i, 1);
+								}
+								
+								
+								break;
+							}
+
+						}
+					}
+					catch (Exception f)
+					{
+						MessageBox.Show(f.StackTrace);
 					}
 				}
+			}
+			else
+            {
+				if(!turboTurnedOn) turboTurnedOn = true;
 			}
 		}
 
@@ -496,6 +586,33 @@ namespace CustomFans_Helios
 			}
 		}
 
+		public static async Task<int> gpu_set_oc_level(Overclocked_Level level)
+		{
+			int output = -1;
+			try
+			{
+				NamedPipeClientStream cline_stream = new NamedPipeClientStream(".", "predatorsense_service_namedpipe", (PipeDirection)3);
+				cline_stream.Connect();
+				output = await Task.Run(delegate
+				{
+					IPCMethods.SendCommandByNamedPipe(cline_stream, 45, new object[1]
+					{
+						(int)level
+					});
+					((PipeStream)cline_stream).WaitForPipeDrain();
+					byte[] array = new byte[9];
+					((Stream)(object)cline_stream).Read(array, 0, array.Length);
+					return BitConverter.ToInt32(array, 5);
+				}).ConfigureAwait(continueOnCapturedContext: false);
+				((Stream)(object)cline_stream).Close();
+				return output;
+			}
+			catch (Exception)
+			{
+				return output;
+			}
+		}
+
 		public static async Task<bool> set_single_custom_fan_state(bool auto, ulong percentage, string fan_group_type)
 		{
 			bool ret = true;
@@ -542,6 +659,8 @@ namespace CustomFans_Helios
 		{
 			fetchData();
 			resetCurve();
+			threshold = Convert.ToInt32(textBox1.Text);
+			saveDataToXml();
 		}
 
 		private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -589,6 +708,20 @@ namespace CustomFans_Helios
             }
 			saveDataToXml();
 		}
+
+        private async void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+			if (checkBox4.Checked)
+			{
+				await gpu_set_oc_level(Overclocked_Level.Turbo);
+			}
+			else
+			{
+				await gpu_set_oc_level(Overclocked_Level.Normal);
+			}
+			saveDataToXml();
+		}
+
     }
 	
 }
